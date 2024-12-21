@@ -1,0 +1,159 @@
+
+
+// Colors
+$main-mint: #31A2AC;
+$black-text: #1E232C;
+$blue: #2E70E8;
+$gray: #D0D5DD;
+$red: #FD2121;
+$sky-blue: #429EFF;
+$dark-red: #AF1C1C;
+
+// Border Radius
+$border-radius-8: 8px;
+$border-radius-16: 16px;
+
+// Font Family
+
+* {
+  font-family: "Pretendard", sans-serif;
+}
+
+// Font Sizes
+$font-sizes: (
+  fs-12: 12px,
+  fs-14: 14px,
+  fs-16: 16px,
+  fs-18: 18px,
+  fs-20: 20px,
+  fs-22: 22px,
+  fs-24: 24px,
+  fs-26: 26px,
+  fs-28: 28px,
+  fs-32: 32px
+);
+
+@each $size, $value in $font-sizes {
+  .fs-#{$size} {
+    font-size: $value;
+  }
+}
+
+// Margins
+@for $i from 1 through 40 {
+  $value: $i * 5;
+  
+  // All margins
+  .m-#{$value} {
+    margin: #{$value}px;
+  }
+  
+  // Top margin
+  .mt-#{$value} {
+    margin-top: #{$value}px;
+  }
+  
+  // Bottom margin
+  .mb-#{$value} {
+    margin-bottom: #{$value}px;
+  }
+  
+  // Left margin
+  .ml-#{$value} {
+    margin-left: #{$value}px;
+  }
+  
+  // Right margin
+  .mr-#{$value} {
+    margin-right: #{$value}px;
+  }
+  
+  // Horizontal margins
+  .mx-#{$value} {
+    margin-left: #{$value}px;
+    margin-right: #{$value}px;
+  }
+  
+  // Vertical margins
+  .my-#{$value} {
+    margin-top: #{$value}px;
+    margin-bottom: #{$value}px;
+  }
+}
+
+// Utility Classes
+.flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+// Positioning
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+// Display
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+// Cursor
+.pointer {
+  cursor: pointer;
+}
+
