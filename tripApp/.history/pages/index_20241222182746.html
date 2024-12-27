@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip APP</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    
+    <script src="../assets/js/layout.js"></script> 
+</head>
+<body>
+    <div class="app">
+        <!-- 지도 배경 -->
+        <div class="map-container" id="map">
+            <img src="https://opendata.molit.go.kr/assets/portal/portal_img/data/dataset/13466/thumbnail.jpg" 
+                 alt="Map placeholder" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    
+        <!-- 검색창 (맵 위에 위치) -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search" class="search-input">
+        </div>
+    
+        <!-- 바텀시트 -->
+        <div class="bottom-sheet">
+            <div class="bottom-sheet__handler">
+                <div class="handler-bar"></div>
+            </div>
+    
+            <div class="bottom-sheet__content">
+                <div class="explore">
+                    <div class="dropdown-wrapper">
+                        <button class="dropdown-btn">
+                            전체
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">전체</a>
+                            <a href="#">관광지</a>
+                            <a href="#">맛집</a>
+                            <a href="#">숙소</a>
+                        </div>
+                    </div>
+    
+                    <div class="post-grid" id="postGrid">
+                        <!-- Sample post items -->
+                        <div class="post-item">
+                            <img src="../assets/images/post_list01.png" alt="post_list01">
+                        </div>
+                        <div class="post-item">
+                            <img src="../assets/images/post_list02.png" alt="post_list01">
+                        </div>
+                        <div class="post-item">
+                            <img src="../assets/images/post_list03.png" alt="post_list01">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

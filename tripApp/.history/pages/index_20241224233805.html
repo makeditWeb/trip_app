@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip APP</title>
+
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    
+
+</head>
+<body>
+    <div class="app">
+        <div class="map" id="map"></div>
+    
+        <!-- 검색창 (맵 위에 위치) -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search" class="search-input">
+        </div>
+    
+        <!-- 바텀시트 -->
+        <div class="bottom-sheet" id="bottomSheet">
+            <div class="handle-bar" id="handleBar">
+                <div class="handle"></div>
+            </div>
+            <div class="sheet-content">
+                <div class="dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown()">
+                        <span class="dropdown-text">전체</span>
+                        <span class="dropdown-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.49935 6.27086L12.1902 0.5L13 1.31854L6.90164 7.5H6.09444L0 1.31854L0.8085 0.5L6.49935 6.27086Z" fill="#31A2AC"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#" onclick="selectOption('전체')">전체</a>
+                        <a href="#" onclick="selectOption('이미지')">이미지</a>
+                        <a href="#" onclick="selectOption('친구')">친구</a>
+                    </div>
+                </div>
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                    </div>
+                    <div class="image-item">
+                        <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                    </div>
+
+                </div>
+
+                <div id="postDetail" class="post-detail">
+                    <div class="post-header">
+                        <img src="../assets/images/profile.png" class="profile-image">
+                        <div class="user-info">
+                            <div class="username">Fery Pratama</div>
+                            <div class="location">
+                                <span><img src="../assets/images/location.png"></span>
+                                Seoul, Republic of Korea
+                            </div>
+                        </div>
+                        <div class="more-options">
+                            <img src="../assets/images/more.png">
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="swiper main_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../assets/images/post_list01.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../assets/images/post_list02.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../assets/images/post_list03.png">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="action-icons">
+                            <span>❤️</span>
+                            <span>💬</span>
+                            <span>➡️</span>
+                        </div>
+                        <div class="post-text">
+                            <p class="text-content">type your post text and see what it will look like here. You can even plan out your abcd... <span class="more-btn">[more]</span></p>
+                            <p class="full-text">type your post text and see what it will look like here. You can even plan out your abcd... Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="../assets/js/layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIHhzD8CYe-CLEAy-Sg4t3fpeI12aQLY&callback=initMap"></script>
+    <script src="../assets/js/slide.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    </div>
+
+
+</body>
+</html>
