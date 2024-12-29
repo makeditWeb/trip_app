@@ -251,37 +251,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// 검색창 탭
 
-document.addEventListener('DOMContentLoaded', function() {
-    const tabItems = document.querySelectorAll('.tab-item');
-    const tabIndicator = document.querySelector('.tab-indicator');
-    
-    // 탭 클릭 이벤트
-    tabItems.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-            // 활성 탭 변경
-            document.querySelector('.tab-item.active').classList.remove('active');
-            tab.classList.add('active');
-            
-            // 인디케이터 이동
-            tabIndicator.style.transform = `translateX(${index * 100}%)`;
-        });
-    });
-    
-    // 검색 기능
-    const searchInput = document.querySelector('.search-input');
-    const searchBtn = document.querySelector('.search-btn');
-    
-    // 검색 버튼 클릭 이벤트
-    searchBtn.addEventListener('click', () => {
-        performSearch(searchInput.value);
-    });
-    
-    // 엔터키 검색 이벤트
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            performSearch(searchInput.value);
-        }
-    });
-});
+
+
+// 검색 페이지 탭
+
+$(document).ready(function(){
+	
+	$('ul.tab-list li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tab-list li').removeClass('active');
+		$('.tab-content').removeClass('active');
+
+		$(this).addClass('active');
+		$("#"+tab_id).addClass('active');
+	})
+
+})
+

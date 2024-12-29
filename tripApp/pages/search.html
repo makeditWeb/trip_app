@@ -38,126 +38,196 @@
                 <div class="search-box">
                     <div class="search-input-wrap">
                         <input type="text" placeholder="Search" class="search-input">
-                        <button type="button" class="search-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M17.5 17.5L13.875 13.875" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        
+                        <button type="button" class="cancel-btn" onclick="location.href='index.html'">취소</button>
                     </div>
                 </div>
 
-                <!-- 탭 메뉴 -->
-                <div class="tab-menu">
+                <div class="search_tab">
+                    <!-- 탭 메뉴 -->
                     <ul class="tab-list">
                         <li class="tab-item active" data-tab="city">도시</li>
                         <li class="tab-item" data-tab="posting">포스팅</li>
-                        <li class="tab-item" data-tab="board">계정</li>
+                        <li class="tab-item" data-tab="person">계정</li>
                     </ul>
-                    <!-- 탭 인디케이터 -->
-                    <div class="tab-indicator"></div>
-                </div>
 
-                <!-- 탭 컨텐츠 영역 -->
-                <div class="tab-contents">
-                    <!-- 도시 탭 컨텐츠 -->
-                    <div class="tab-content active" id="city">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                    <!-- 탭 컨텐츠 영역 -->
+                    <div class="tab-contents">
+                        <!-- 도시 탭 컨텐츠 -->
+                        <div class="tab-content active" id="city">
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+            
                             </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                        </div>
+
+                        <!-- 포스팅 탭 컨텐츠 -->
+                        <div class="tab-content" id="posting">
+                            <div class="image-grid">
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
+                                </div>
+                                <div class="image-item">
+                                    <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                                </div>
+            
                             </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
+                        </div>
+
+                        <!-- 게시물 탭 컨텐츠 -->
+                        <div class="tab-content" id="person">
+                            <div class="person_list">
+                                <div class="person_item">
+                                    <div class="person_user">
+                                        <img src="../assets/images/profile.png">
+                                        <h5 class="user_name">Hana</h5>
+                                    </div>
+                                    <ul class="user_info">
+                                        <li class="location">
+                                            일본
+                                        </li>
+                                        <li class="info">
+                                            여행중
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="person_item">
+                                    <div class="person_user">
+                                        <img src="../assets/images/profile.png">
+                                        <h5 class="user_name">Hana</h5>
+                                    </div>
+                                    <ul class="user_info">
+                                        <li class="location">
+                                            일본
+                                        </li>
+                                        <li class="info">
+                                            여행중
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="person_item">
+                                    <div class="person_user">
+                                        <img src="../assets/images/profile.png">
+                                        <h5 class="user_name">Hana</h5>
+                                    </div>
+                                    <ul class="user_info">
+                                        <li class="location">
+                                            일본
+                                        </li>
+                                        <li class="info">
+                                            여행중
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="person_item">
+                                    <div class="person_user">
+                                        <img src="../assets/images/profile.png">
+                                        <h5 class="user_name">Hana</h5>
+                                    </div>
+                                    <ul class="user_info">
+                                        <li class="location">
+                                            일본
+                                        </li>
+                                        <li class="info">
+                                            여행중
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="person_item">
+                                    <div class="person_user">
+                                        <img src="../assets/images/profile.png">
+                                        <h5 class="user_name">Hana</h5>
+                                    </div>
+                                    <ul class="user_info">
+                                        <li class="location">
+                                            일본
+                                        </li>
+                                        <li class="info">
+                                            여행중
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-        
+
                         </div>
                     </div>
-
-                    <!-- 포스팅 탭 컨텐츠 -->
-                    <div class="tab-content" id="posting">
-                        <div class="image-grid">
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list01.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list02.png" onclick="showPostDetail(this.src)">
-                            </div>
-                            <div class="image-item">
-                                <img src="../assets/images/post_list03.png" onclick="showPostDetail(this.src)">
-                            </div>
-        
-                        </div>
-                    </div>
-
-                    <!-- 게시물 탭 컨텐츠 -->
-                    <div class="tab-content" id="board">
-                        <!-- 계정 관련 컨텐츠 -->
-                    </div>
                 </div>
+
             </div>
         </div>
 
     
 
 
-
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIHhzD8CYe-CLEAy-Sg4t3fpeI12aQLY&callback=initMap"></script>
     <script src="../assets/js/common.js"></script>
