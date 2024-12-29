@@ -2074,7 +2074,7 @@ body {
 
 .search-bar {
   position: absolute;
-  top: 20px;
+  top: 80px;
   left: 16px;
   right: 16px;
   z-index: 2;
