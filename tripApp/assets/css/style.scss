@@ -1610,6 +1610,7 @@ $font-sizes: (
 
   .chat_list_content {
     margin-top: 20px;
+
     .tab-content {
       display: none;
 
@@ -1626,41 +1627,41 @@ $font-sizes: (
         text-decoration: none;
         padding-bottom: 19px;
       }
-  
+
       .user-img {
         width: 42px;
         height: 42px;
         border-radius: 50%;
-  
+
         img {
           width: 100%;
         }
       }
-  
+
       .chat_wrapp {
         width: calc(100% - 42px);
-  
+
         .chat_list_header {
           display: flex;
           align-items: center;
           justify-content: space-between;
           margin-bottom: 8px;
-  
+
           .user {
             color: $black-text;
             font-size: 16px;
             font-weight: 700;
           }
-  
+
           .date {
             color: $dark-gray;
             text-align: right;
             font-size: 12px;
             font-weight: 700;
           }
-  
+
         }
-  
+
         .chat_content {
           color: $black-text;
           text-align: left;
@@ -1673,13 +1674,14 @@ $font-sizes: (
           -webkit-box-orient: vertical;
           word-break: keep-all
         }
-  
-        .chat_list_body{
+
+        .chat_list_body {
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 100%;
-          .alarm{
+
+          .alarm {
             background-color: $main-mint;
             color: #fff;
             width: 20px;
@@ -1691,16 +1693,16 @@ $font-sizes: (
             font-size: 12px;
             font-weight: 700;
           }
-  
-  
+
+
         }
       }
-  
+
     }
   }
 
 
-  .chat_btn{
+  .chat_btn {
     width: 48px;
     height: 48px;
     display: flex;
@@ -1715,45 +1717,50 @@ $font-sizes: (
   }
 
 
-  .open-chat{
-    .chat_list_item{
+  .open-chat {
+    .chat_list_item {
       display: flex;
       text-decoration: none;
-      .user-img{
+
+      .user-img {
         position: relative;
-        width: 42px;  // 전체 이미지 영역 너비 설정
+        width: 42px; // 전체 이미지 영역 너비 설정
         height: 42px;
         margin-right: 15px;
-        .profile_img{
+
+        .profile_img {
           position: absolute;
           width: 42px;
           height: 42px;
           border-radius: 50%;
           border: 1px solid #fff;
-          &:nth-child(1){
+
+          &:nth-child(1) {
             left: 0;
             z-index: 1;
           }
-          &:nth-child(2){
-            left: 6px;  // 겹침 정도 조절
+
+          &:nth-child(2) {
+            left: 6px; // 겹침 정도 조절
             z-index: 2;
           }
-          &:nth-child(3){
-            left: 12px;  // 겹침 정도 조절
+
+          &:nth-child(3) {
+            left: 12px; // 겹침 정도 조절
             z-index: 3;
           }
 
 
         }
 
-        .more_profile{
+        .more_profile {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          left: 12px;  // 겹침 정도 조절
+          left: 12px; // 겹침 정도 조절
           z-index: 3;
           background-color: #fff;
-          position:absolute;
+          position: absolute;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1766,4 +1773,635 @@ $font-sizes: (
     }
   }
 
+}
+
+
+.sub_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 20px;
+  border-bottom: 1px solid #E1E1E1;
+  background: #FFF;
+
+  .page_title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $black-text;
+  }
+
+  .menu_dots {
+    position: relative;
+  }
+
+  .dropdown_menu {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 150px;
+
+    &.active {
+      display: block;
+    }
+
+    .menu_item {
+      width: 100%;
+      padding: 12px 16px;
+      background: none;
+      border: none;
+      text-align: left;
+      color: #2C2D3A;
+      font-size: 14px;
+      line-height: 20px;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+}
+
+.chat_container_list {
+  padding: 15px;
+  overflow-y: auto;
+  height: calc(100vh - 61px);
+  background-color: #e3e9ed;
+
+  .today_divider {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 14px;
+    color: $black-text;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    position: relative;
+    width: 50px;
+    font-weight: 700;
+  }
+
+  .chat_list-item {
+    max-width: 70%;
+  }
+
+
+  /* Message styles */
+  .message {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    .user_profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile_img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+
+    }
+
+    .user_name {
+      font-size: 14px;
+      color: #000E08;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    &.received {
+      align-items: flex-end;
+      flex-direction: row;
+
+      .message_content {
+        background: #F2F7FB;
+        border-radius: 0 15px 15px 15px;
+      }
+    }
+
+    &.sent {
+      flex-direction: row-reverse;
+
+      .message_content {
+        background: #4AA8D8;
+        color: white;
+        border-radius: 15px 0 15px 15px;
+      }
+    }
+
+    .message_content {
+      max-width: 100%;
+      padding: 12px 15px;
+      font-size: 12px;
+    }
+
+    .message_time {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+
+
+}
+
+.chat_input_area {
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 9;
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  input {
+    background-color: #F7F7FC;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    border: none;
+    width: calc(100% - 60px);
+    height: 36px;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+  }
+
+  .camera-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .send_button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.openchat_container_list {
+  padding: 15px;
+  overflow-y: auto;
+  height: calc(100vh - 61px);
+  background-color: #e3e9ed;
+
+  .today_divider {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 14px;
+    color: $black-text;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    position: relative;
+    width: 50px;
+    font-weight: 700;
+  }
+
+  .chat_list-item {
+    max-width: 70%;
+  }
+
+
+  /* Message styles */
+  .message {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    .user_profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile_img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+
+    }
+
+    .user_name {
+      font-size: 14px;
+      color: #000E08;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    &.received {
+      align-items: flex-end;
+      flex-direction: row;
+
+      .message_content {
+        background: #F2F7FB;
+        border-radius: 0 15px 15px 15px;
+      }
+    }
+
+    &.sent {
+      flex-direction: row-reverse;
+
+      .message_content {
+        background: #4AA8D8;
+        color: white;
+        border-radius: 15px 0 15px 15px;
+      }
+    }
+
+    .message_content {
+      max-width: 100%;
+      padding: 12px 15px;
+      font-size: 12px;
+    }
+
+    .message_time {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+
+
+}
+
+
+.menu_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 998;
+
+}
+
+.menu_overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.side_menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background: white;
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+
+  &.active {
+    right: 0;
+  }
+
+  .team_wrapp{
+    width: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+  }
+  .team_info {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .team-title{
+      h3{
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        color: $black-text;
+        margin-bottom: 5px;
+      }
+
+      .member_count{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: left;
+      }
+    }
+  }
+
+  .team_image {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .gradient_circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  }
+
+  .team_type {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .manage_btn {
+    height: 28px;
+    border: 1px solid #31A2AC;
+    border-radius: 30px;
+    background: white;
+    width: 80px;
+    color: #31A2AC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0 auto;
+  }
+
+  /* 멤버 리스트 스타일 */
+  .members_list {
+    margin-top: 20px;
+    h4{
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .member_item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      .member_name{
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .member_action {
+        margin-left: auto;
+        width: 70px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $main-mint;
+        color: white;
+        border-radius: 30px;
+        border: none;
+      }
+    }
+
+    .add_member_btn {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+  }
+
+  .member_footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #F9F9F9;
+    button{
+      border: none;
+      background:none;
+    }
+}
+
+}
+
+
+.openChat_setting {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  transition: bottom 0.3s ease;
+  z-index: 1000;
+
+  &.active {
+      bottom: 0;
+  }
+
+  .setting_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid #E1E1E1;
+
+      h2 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #2C2D3A;
+      }
+
+      .close_btn {
+          background: none;
+          border: none;
+          padding: 4px;
+      }
+  }
+
+  .setting_content {
+      padding: 0 20px;
+  }
+
+  .setting_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid #E1E1E1;
+
+      span {
+          font-size: 15px;
+          color: #2C2D3A;
+      }
+
+      .edit_btn {
+          padding: 6px 16px;
+          border: 1px solid #31A2AC;
+          border-radius: 30px;
+          background: none;
+          color: #31A2AC;
+          font-size: 14px;
+      }
+
+      .number_input {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          input {
+              width: 60px;
+              height: 32px;
+              border: 1px solid #E1E1E1;
+              border-radius: 4px;
+              text-align: center;
+              font-size: 14px;
+          }
+
+          span {
+              color: #666;
+          }
+      }
+  }
+
+  /* 토글 스위치 스타일 */
+  .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+
+      input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+
+          &:checked + .slider {
+              background-color: #31A2AC;
+          }
+
+          &:checked + .slider:before {
+              transform: translateX(20px);
+          }
+      }
+
+      .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #E1E1E1;
+          transition: .3s;
+          border-radius: 34px;
+
+          &:before {
+              position: absolute;
+              content: "";
+              height: 20px;
+              width: 20px;
+              left: 2px;
+              bottom: 2px;
+              background-color: white;
+              transition: .3s;
+              border-radius: 50%;
+          }
+      }
+  }
+
+  .gradient_circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  }
+
+  .team_type {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+
+  .team_image {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .team_info {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .team-title{
+      h3{
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        color: $black-text;
+        margin-bottom: 5px;
+      }
+
+      .member_count{
+        font-size: 12px;
+        font-weight: 400;
+        text-align: left;
+      }
+    }
+  }
 }

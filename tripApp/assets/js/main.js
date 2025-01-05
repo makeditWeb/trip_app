@@ -270,3 +270,149 @@ $(document).ready(function(){
 
 })
 
+
+
+// chat
+document.addEventListener('DOMContentLoaded', function() {
+    // 뒤로가기 버튼 기능 - 공통
+    const backBtn = document.querySelector('.back_btn');
+    if(backBtn) {
+        backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.history.back();
+        });
+    }
+
+    const tabLinks = document.querySelectorAll('.tab-link');
+    
+    tabLinks.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tabType = this.getAttribute('data-tab');
+            
+            // 페이지 이동
+            if(tabType === 'chat') {
+                window.location.href = 'chatroom.html';
+            } else if(tabType === 'openchat') {
+                window.location.href = 'openchat.html';
+            }
+        });
+    });
+
+    // menu_dots 클릭 이벤트 - 공통
+    const menuDots = document.querySelector('.menu_dots svg');
+    if(menuDots) {
+        // URL이나 클래스를 체크하여 개인채팅/오픈채팅 구분
+        const isOpenChat = document.querySelector('.openchat_container_list') !== null;
+        
+        if(isOpenChat) {
+            // 오픈챗 사이드 메뉴 기능
+            const sideMenu = document.querySelector('.side_menu');
+            const menuOverlay = document.querySelector('.menu_overlay');
+            const manageBtn = document.querySelector('.manage_btn');
+            const openChatSetting = document.querySelector('.openChat_setting');
+            const settingCloseBtn = document.querySelector('.openChat_setting .close_btn');
+
+            menuDots.addEventListener('click', function(e) {
+                e.stopPropagation();
+                sideMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            if(menuOverlay) {
+                menuOverlay.addEventListener('click', closeMenu);
+            }
+
+            // 오른쪽으로 스와이프하여 메뉴 닫기
+            if(sideMenu) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                sideMenu.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, false);
+
+                sideMenu.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if (touchEndX > touchStartX) {
+                        closeMenu();
+                    }
+                }, false);
+            }
+
+            // 관리 버튼 클릭 이벤트
+            if(manageBtn) {
+                manageBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openChatSetting.classList.add('active');
+                    // side menu 닫기
+                    closeMenu();
+                });
+            }
+
+            // 설정 닫기 버튼 이벤트
+            if(settingCloseBtn) {
+                settingCloseBtn.addEventListener('click', function() {
+                    openChatSetting.classList.remove('active');
+                });
+            }
+
+            function closeMenu() {
+                sideMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+        } else {
+            // 개인채팅 드롭다운 메뉴 기능
+            const dropdownMenu = document.querySelector('.dropdown_menu');
+            let isDropdownOpen = false;
+
+            menuDots.addEventListener('click', function(e) {
+                e.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+                dropdownMenu.classList.toggle('active');
+            });
+
+            const menuItems = document.querySelectorAll('.menu_item');
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const action = this.textContent;
+                    console.log('Selected action:', action);
+                    dropdownMenu.classList.remove('active');
+                    isDropdownOpen = false;
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (isDropdownOpen && !dropdownMenu.contains(e.target)) {
+                    dropdownMenu.classList.remove('active');
+                    isDropdownOpen = false;
+                }
+            });
+        }
+    }
+
+    // 설정 토글 스위치 기능
+    const toggleSwitches = document.querySelectorAll('.switch input[type="checkbox"]');
+    if(toggleSwitches) {
+        toggleSwitches.forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                console.log('Toggle switched:', this.checked);
+                // 여기에 토글 상태 변경에 따른 추가 로직 구현
+            });
+        });
+    }
+
+    // 최대 인원수 입력 제한
+    const memberCountInput = document.querySelector('.number_input input');
+    if(memberCountInput) {
+        memberCountInput.addEventListener('input', function() {
+            let value = parseInt(this.value);
+            if (value > 100) this.value = 100; // 최대값 제한
+            if (value < 1) this.value = 1; // 최소값 제한
+        });
+    }
+});
